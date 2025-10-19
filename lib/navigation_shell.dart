@@ -13,7 +13,7 @@ class NavigationShell extends StatefulWidget {
 }
 
 class _NavigationShellState extends State<NavigationShell> {
-  static const List<Widget> _pages = <Widget>[
+  static final List<Widget> _pages = <Widget>[
 
     WeightScreen(),
     LeapYearScreen(),

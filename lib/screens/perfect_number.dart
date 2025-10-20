@@ -81,6 +81,7 @@ class _PerfectNumberScreenState extends State<PerfectNumberScreen> {
               onPressed: checkPerfectNumber,
               child: const Text('Check Perfect Number'),
               style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(10),
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
               ),

@@ -43,9 +43,11 @@ class _ChangeScreenState extends State<ChangeScreen> {
       }
 
       Change.resetChange();
-      Change.computeChange(double.parse((amountPaid - price)
-              .toStringAsFixed(2)) //this avoid floating point issue
-          );
+      Change.computeChange(
+        double.parse(
+          (amountPaid - price).toStringAsFixed(2),
+        ), //this avoid floating point issue
+      );
 
       this.changeBreakdown = 'table';
     });
@@ -119,6 +121,7 @@ class _ChangeScreenState extends State<ChangeScreen> {
               onPressed: computeChange,
               child: Text('Compute Change'),
               style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(10),
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
               ),
@@ -133,91 +136,109 @@ class _ChangeScreenState extends State<ChangeScreen> {
                     decoration: BoxDecoration(color: Colors.blue),
                     children: [
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('Coin',
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'Coin',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white)),
-                      )),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('Count',
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'Count',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white)),
-                      )),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   TableRow(
                     children: [
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('\$2.00'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('\$2.00'),
+                        ),
+                      ),
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('${Change.twoDollarCoins}'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('${Change.twoDollarCoins}'),
+                        ),
+                      ),
                     ],
                   ),
                   TableRow(
                     children: [
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('\$1.00'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('\$1.00'),
+                        ),
+                      ),
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('${Change.oneDollarCoins}'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('${Change.oneDollarCoins}'),
+                        ),
+                      ),
                     ],
                   ),
                   TableRow(
                     children: [
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('\$0.50'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('\$0.50'),
+                        ),
+                      ),
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('${Change.fiftyCentsCoins}'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('${Change.fiftyCentsCoins}'),
+                        ),
+                      ),
                     ],
                   ),
                   TableRow(
                     children: [
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('\$0.25'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('\$0.25'),
+                        ),
+                      ),
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('${Change.quarterCoins}'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('${Change.quarterCoins}'),
+                        ),
+                      ),
                     ],
                   ),
                   TableRow(
                     children: [
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('\$0.10'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('\$0.10'),
+                        ),
+                      ),
                       TableCell(
-                          child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('${Change.dimeCoins}'),
-                      )),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text('${Change.dimeCoins}'),
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -229,7 +250,7 @@ class _ChangeScreenState extends State<ChangeScreen> {
                   style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                 ),
               ),
-            ]
+            ],
           ],
         ),
       ),

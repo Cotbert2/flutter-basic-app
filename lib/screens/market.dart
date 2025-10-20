@@ -99,9 +99,10 @@ class _MarketScreenState extends State<MarketScreen> {
               Text(
                 'Total amount: \$${store.getGrandTotal().toStringAsFixed(2)}',
                 style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                ),
               ),
               const SizedBox(height: 10),
               Text('Total customers: ${store.getCustomerCount()}'),
@@ -118,7 +119,7 @@ class _MarketScreenState extends State<MarketScreen> {
                     'Customer ${entry.key + 1}: \$${entry.value.toStringAsFixed(2)}',
                   ),
                 );
-              })
+              }),
             ],
           ),
           actions: [
@@ -139,8 +140,10 @@ class _MarketScreenState extends State<MarketScreen> {
                   const SnackBar(content: Text('Store reset for new day')),
                 );
               },
-              child:
-                  const Text('Reset Day', style: TextStyle(color: Colors.red)),
+              child: const Text(
+                'Reset Day',
+                style: TextStyle(color: Colors.red),
+              ),
             ),
           ],
         );
@@ -176,10 +179,7 @@ class _MarketScreenState extends State<MarketScreen> {
       appBar: AppBar(
         title: const Text('Basic Flutter App: Market'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.info),
-            onPressed: showHelperPopUp,
-          ),
+          IconButton(icon: const Icon(Icons.info), onPressed: showHelperPopUp),
         ],
       ),
       body: Padding(
@@ -190,9 +190,10 @@ class _MarketScreenState extends State<MarketScreen> {
             const Text(
               'Current Customer',
               style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
             ),
             const SizedBox(height: 16),
             Row(
@@ -200,16 +201,18 @@ class _MarketScreenState extends State<MarketScreen> {
                 Expanded(
                   child: TextField(
                     controller: priceController,
-                    keyboardType:
-                        const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType: const TextInputType.numberWithOptions(
+                      decimal: true,
+                    ),
                     decoration: const InputDecoration(
                       labelText: 'Item Price',
                       border: OutlineInputBorder(),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.blue, width: 2.0),
                       ),
-                      floatingLabelStyle:
-                          TextStyle(color: Colors.blue), // label cuando flota
+                      floatingLabelStyle: TextStyle(
+                        color: Colors.blue,
+                      ), // label cuando flota
                     ),
                     onSubmitted: (_) => addItem(),
                   ),
@@ -238,8 +241,9 @@ class _MarketScreenState extends State<MarketScreen> {
                                     backgroundColor: Colors.blue,
                                     child: Text(
                                       '${index + 1}',
-                                      style:
-                                          const TextStyle(color: Colors.white),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                   title: Text(
@@ -252,18 +256,17 @@ class _MarketScreenState extends State<MarketScreen> {
                     Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        border: Border(
-                          top: BorderSide(color: Colors.black38),
-                        ),
+                        border: Border(top: BorderSide(color: Colors.black38)),
                       ),
                       child: Row(
                         children: [
                           Text(
                             'Current Customer Total: \$${getCurrentTotal().toStringAsFixed(2)}',
                             style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black87),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87,
+                            ),
                           ),
                         ],
                       ),
@@ -280,7 +283,7 @@ class _MarketScreenState extends State<MarketScreen> {
                   onPressed: currentItems.isEmpty ? null : checkoutCustomer,
                   label: const Text('Checkout Customer'),
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(10),
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,
                   ),
@@ -290,7 +293,7 @@ class _MarketScreenState extends State<MarketScreen> {
                   onPressed: showDayReport,
                   label: const Text('Day Report'),
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(10),
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,
                   ),

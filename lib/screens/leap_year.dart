@@ -106,6 +106,7 @@ class _LeapYearScreenState extends State<LeapYearScreen> {
               child: const Text('Check Leap Year'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
+                padding: const EdgeInsets.all(10),
 
                 foregroundColor: Colors.white,
               ),

@@ -15,7 +15,7 @@ class _MarketScreenState extends State<MarketScreen> {
         return AlertDialog(
           title: const Text('Exercise Description #11'),
           content: const Text(
-            'A year is a leap year if it is a multiple of 4, except for multiples of 100, which are only leap years when they are also multiples of 400, for example the year 1900 was not a leap year, but the year 2000 was. Make a program that, given a year A, tells us if it is a leap year or not',
+            'In a supermarket, a cashier records the prices of items purchased by customers and tells each customer how much they owe. At the end of the day, he tells his supervisor the total amount charged to all the customers who went through his checkout.',
           ),
           actions: [
             TextButton(
@@ -38,7 +38,7 @@ class _MarketScreenState extends State<MarketScreen> {
         title: const Text('Basic Flutter App: Market'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.info_outline),
+            icon: const Icon(Icons.info),
             onPressed: showHelperPopUp,
           ),
         ],

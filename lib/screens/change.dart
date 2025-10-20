@@ -43,9 +43,9 @@ class _ChangeScreenState extends State<ChangeScreen> {
       }
 
       Change.resetChange();
-      Change.computeChange(
-          double.parse((amountPaid - price).toStringAsFixed(2)) //this avoid floating point issue
-      );
+      Change.computeChange(double.parse((amountPaid - price)
+              .toStringAsFixed(2)) //this avoid floating point issue
+          );
 
       this.changeBreakdown = 'table';
     });
@@ -56,9 +56,9 @@ class _ChangeScreenState extends State<ChangeScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Exercise Description #11'),
+          title: const Text('Exercise Description #12'),
           content: const Text(
-            'In a supermarket, a cashier captures the prices of the items that customers buy and tells each customer the amount they have to pay. At the end of the day, he/she tells their supervisor the total amount charged to all the customers who passed through their checkout',
+            'We have a machine that can give change using five different types of coins: \$2, \$1, \$0.50, \$0.25, and \$0.10. Create a program that, given the price of the item and the amount paid by the consumer, tells us the change to be given using the fewest possible coins.',
           ),
           actions: [
             TextButton(
@@ -114,21 +114,17 @@ class _ChangeScreenState extends State<ChangeScreen> {
                 labelStyle: TextStyle(color: Colors.blue),
               ),
             ),
-
             SizedBox(height: 50.0),
             ElevatedButton(
               onPressed: computeChange,
               child: Text('Compute Change'),
-
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-
                 foregroundColor: Colors.white,
               ),
             ),
-
             SizedBox(height: 50.0),
-             ...[
+            ...[
               Table(
                 border: TableBorder.all(),
                 defaultVerticalAlignment: TableCellVerticalAlignment.middle,
@@ -136,29 +132,33 @@ class _ChangeScreenState extends State<ChangeScreen> {
                   TableRow(
                     decoration: BoxDecoration(color: Colors.blue),
                     children: [
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: Text('Coin', style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white
-                          )),
+                        child: Text('Coin',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
                       )),
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
-                        child: Text('Count', style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white
-                        )),
+                        child: Text('Count',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
                       )),
                     ],
                   ),
                   TableRow(
                     children: [
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('\$2.00'),
                       )),
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('${Change.twoDollarCoins}'),
                       )),
@@ -166,11 +166,13 @@ class _ChangeScreenState extends State<ChangeScreen> {
                   ),
                   TableRow(
                     children: [
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('\$1.00'),
                       )),
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('${Change.oneDollarCoins}'),
                       )),
@@ -178,11 +180,13 @@ class _ChangeScreenState extends State<ChangeScreen> {
                   ),
                   TableRow(
                     children: [
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('\$0.50'),
                       )),
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('${Change.fiftyCentsCoins}'),
                       )),
@@ -190,11 +194,13 @@ class _ChangeScreenState extends State<ChangeScreen> {
                   ),
                   TableRow(
                     children: [
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('\$0.25'),
                       )),
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('${Change.quarterCoins}'),
                       )),
@@ -202,11 +208,13 @@ class _ChangeScreenState extends State<ChangeScreen> {
                   ),
                   TableRow(
                     children: [
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('\$0.10'),
                       )),
-                      TableCell(child: Padding(
+                      TableCell(
+                          child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('${Change.dimeCoins}'),
                       )),
@@ -215,13 +223,13 @@ class _ChangeScreenState extends State<ChangeScreen> {
                 ],
               ),
               SizedBox(height: 16.0),
-              Center( 
+              Center(
                 child: Text(
                   'Pending Amount: \$${Change.pendingAmount.toStringAsFixed(2)}',
                   style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
                 ),
               ),
-            ] 
+            ]
           ],
         ),
       ),

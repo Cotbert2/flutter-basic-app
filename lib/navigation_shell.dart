@@ -14,12 +14,11 @@ class NavigationShell extends StatefulWidget {
 
 class _NavigationShellState extends State<NavigationShell> {
   static final List<Widget> _pages = <Widget>[
-
-    WeightScreen(),
+    MarketScreen(),
+    ChangeScreen(),
     LeapYearScreen(),
     PerfectNumberScreen(),
-    ChangeScreen(),
-    MarketScreen()
+    WeightScreen(),
   ];
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
@@ -32,12 +31,15 @@ class _NavigationShellState extends State<NavigationShell> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(index: _selectedIndex, children: _pages),
-
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.monitor_weight),
-            label: 'Weight',
+            icon: Icon(Icons.local_convenience_store_rounded),
+            label: 'Market',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.swap_horiz),
+            label: 'Change',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
@@ -48,12 +50,8 @@ class _NavigationShellState extends State<NavigationShell> {
             label: 'Perfect Number',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.swap_horiz),
-            label: 'Change',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_convenience_store_rounded),
-            label: 'Market',
+            icon: Icon(Icons.monitor_weight),
+            label: 'Weight',
           ),
         ],
         currentIndex: _selectedIndex,

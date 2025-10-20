@@ -17,9 +17,9 @@ class _PerfectNumberScreenState extends State<PerfectNumberScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Exercise Description #11'),
+          title: const Text('Exercise Description #14'),
           content: const Text(
-            'In a supermarket, a cashier captures the prices of the items that customers buy and tells each customer the amount they have to pay. At the end of the day, he/she tells their supervisor the total amount charged to all the customers who passed through their checkout',
+            'Given two positive integers Ny D, D is said to be a divisor of N if the remainder of dividing N by D is 0. A number N is said to be perfect if the sum of its divisors (excluding N itself) is N. For example 28 is perfect, since its divisors (excluding 28) are: 1, 2, 4, 7 and 14 and their sum is 1+2+4+7+14=28. Make an algorithm that, given a number N, tells us whether it is perfect or not.',
           ),
           actions: [
             TextButton(
@@ -67,7 +67,7 @@ class _PerfectNumberScreenState extends State<PerfectNumberScreen> {
             TextField(
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Enter a year',
+                labelText: 'Enter the number',
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.blue, width: 2.0),
                 ),
@@ -79,10 +79,9 @@ class _PerfectNumberScreenState extends State<PerfectNumberScreen> {
             SizedBox(height: 40.0),
             ElevatedButton(
               onPressed: checkPerfectNumber,
-              child: const Text('Check Leap Year'),
+              child: const Text('Check Perfect Number'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-
                 foregroundColor: Colors.white,
               ),
             ),
